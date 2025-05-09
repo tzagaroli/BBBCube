@@ -76,6 +76,20 @@ Just open the root of the repository with VS Code.
 
 All configurations (compilers, debuggers, paths) are preconfigured in `.vscode/tasks.json` and `.vscode/launch.json`.
 
+### 6. Set up SSH Key Authentication for Root Login on BeagleBone Black (BBB)
+
+If you start out fresh, it’s a good idea to configure SSH key authentication to avoid having to enter the root password every time you connect to the BeagleBone Black (BBB).
+
+To do this, follow these steps:
+
+1. **Ensure you have access to the BBB**: Make sure you can still log in to your BeagleBone Black using the root password. If you don't have access, make sure the BBB is properly connected and accessible over the network.
+
+2. **Run the SSH key setup script**: Use the task `copy ssh-key to BBB` and enter the root password to copy your PC's ssh-Key to the BeagleBone Black,  allowing for password-less login in the future.
+The `manage_cube.sh` script also contains a helper function. To copy your SSH key to the BBB, run the following command:
+
+   ```bash
+   ./manage_cube.sh --copy-sshkey
+
 ---
 
 ## 💻 Terminal-Only Usage (no VS Code)
@@ -83,4 +97,4 @@ All configurations (compilers, debuggers, paths) are preconfigured in `.vscode/t
 (warning: debugger is setup in VS Code)
 You can also use the project entirely from the terminal and any text editor:
 
-Check `manage_cube.sh` for more information
+Check `./manage_cube -h` for more information

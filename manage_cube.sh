@@ -16,6 +16,31 @@ DEBUG_PATH_NATIVE="$BUILD_DIR_NATIVE/$BUILD_DIR_DEBUG/$APPNAME"
 RELEASE_PATH_BBB="$BUILD_DIR_BBB/$BUILD_DIR_RELEASE/$APPNAME"
 DEBUG_PATH_BBB="$BUILD_DIR_BBB/$BUILD_DIR_DEBUG/$APPNAME"
 
+help() {
+    echo "Usage: $0 [OPTION]"
+    echo
+    echo "Options:"
+    echo "  -bdn, --build-debug-native      Build the application in Debug mode for local (native) platform"
+    echo "  -bdbbb, --build-debug-bbb       Build the application in Debug mode for BeagleBone Black (BBB)"
+    echo "  -brn, --build-release-native    Build the application in Release mode for local (native) platform"
+    echo "  -brbbb, --build-release-bbb     Build the application in Release mode for BeagleBone Black (BBB)"
+    echo "  -rdn, --run-debug-native        Run the Debug version of the application locally"
+    echo "  -rdbbb, --run-debug-bbb         Run the Debug version of the application on BeagleBone Black (BBB)"
+    echo "  -rrn, --run-release-native      Run the Release version of the application locally"
+    echo "  -rrbbb, --run-release-bbb       Run the Release version of the application on BeagleBone Black (BBB)"
+    echo "  -c, --clean                     Clean the project (remove compiled files)"
+    echo "  -sdn, --start-debugger-native   Start the debugger for the local (native) application"
+    echo "  -sdbbb, --start-debugger-bbb    Start the debugger for the BeagleBone Black (BBB) application"
+    echo "  -sshkey, --copy-sshkey          Copy SSH key to the BeagleBone Black for password-less SSH"
+    echo
+    echo "Example usage:"
+    echo "  $0 --build-debug-native        # Build locally in Debug mode"
+    echo "  $0 --run-release-bbb           # Run the Release version on BeagleBone Black"
+    echo "  $0 --start-debugger-native     # Start the debugger for local (native) platform"
+    echo "  $0 --copy-sshkey               # Copy SSH key to BBB for password-less login"
+    echo
+}
+
 file2BBB() {
     if [ $# -ne 1 ]; then
         echo "copy file to BBB needs 1 argument"
@@ -134,8 +159,16 @@ if [ "$(basename "$(pwd)")" != "${PROJECTNAME}" ]; then
     exit 1
 fi
 
+if [ $# -eq 0 ]; then
+    echo "No arguments found. Please chose an action."
+    help
+    exit 1
+fi
 while [ $# -gt 0 ]; do
     case "$1" in
+        -h|--help)
+            help
+            ;;
         -bdn|--build-debug-native)
             build_debug_native
             ;;
