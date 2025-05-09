@@ -24,6 +24,8 @@ You **must follow this structure** for the build system and tasks to work proper
 
 ## 🧰 Getting Started (VS Code)
 
+If your machine comes with any of these pre-installed skip the installation (the emsys VM can skip 2.)
+
 ### 1. Install VS Code
 
 - Download from: https://code.visualstudio.com/ or through packet manager
