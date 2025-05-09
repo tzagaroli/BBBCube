@@ -87,9 +87,9 @@ To do this, follow these steps:
 2. **Run the SSH key setup script**: Use the task `copy ssh-key to BBB` and enter the root password to copy your PC's ssh-Key to the BeagleBone Black,  allowing for password-less login in the future.
 The `manage_cube.sh` script also contains a helper function. To copy your SSH key to the BBB, run the following command:
 
-   ```bash
-   ./manage_cube.sh --copy-sshkey
-
+```bash
+./manage_cube.sh --copy-sshkey
+```
 ---
 
 ## 💻 Terminal-Only Usage (no VS Code)
