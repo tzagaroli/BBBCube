@@ -8,6 +8,7 @@ It supports development in **Visual Studio Code** as well as from the **terminal
 
 ## 📁 Project Structure
 
+```
 project/
 ├── include/ # Header files for application logic
 ├── src/ # Source files (must match include declarations)
@@ -15,7 +16,7 @@ project/
 ├── .vscode/ # VS Code tasks, debugger configs, settings
 ├── makefile # Central build file (local or cross)
 ├── manage_cube.sh # Helper script for building/deploying from terminal
-
+```
 
 You **must follow this structure** for the build system and tasks to work properly.
 
@@ -63,6 +64,12 @@ You can also use the project entirely from the terminal and any text editor:
 ### 1. Install Required Tools
 
 Install a C++ compiler and Make:
+
+```bash
+sudo apt update
+sudo apt install make
+sudo apt install g++
+```
 
 #### For native/local development:
 
