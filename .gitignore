@@ -1,3 +1,4 @@
 /build_BBB
 /build_native
-value
+__pycache__/
+**__pycache__/

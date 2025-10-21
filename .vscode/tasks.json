@@ -20,7 +20,6 @@
           "reveal": "always"
         }
       },
-      
       {
         "label": "build for bbb",
         "type": "shell",
@@ -40,7 +39,22 @@
           "reveal": "always"
         }
       },
-      
+      {
+        "label": "gui viewer",
+        "type": "shell",
+        "command": "./manage_cube.sh --gui-viewer > /dev/null 2>&1",
+        "presentation": {
+          "reveal": "never"
+        }
+      },
+      {
+        "label": "gui control",
+        "type": "shell",
+        "command": "./manage_cube.sh --gui-control > /dev/null 2>&1",
+        "presentation": {
+          "reveal": "never"
+        }
+      },
       {
         "label": "clean",
         "type": "shell",

@@ -28,6 +28,8 @@ help() {
     echo "  -rdbbb, --run-debug-bbb         Run the Debug version of the application on BeagleBone Black (BBB)"
     echo "  -rrn, --run-release-native      Run the Release version of the application locally"
     echo "  -rrbbb, --run-release-bbb       Run the Release version of the application on BeagleBone Black (BBB)"
+    echo "  -gv,  --gui-viewer              Start the GUI to visualize and log data on the host machine"
+    echo "  -gc,  --gui-control             Start the GUI to control cube on the host machine"
     echo "  -c, --clean                     Clean the project (remove compiled files)"
     echo "  -sdn, --start-debugger-native   Start the debugger for the local (native) application"
     echo "  -sdbbb, --start-debugger-bbb    Start the debugger for the BeagleBone Black (BBB) application"
@@ -39,6 +41,14 @@ help() {
     echo "  $0 --start-debugger-native     # Start the debugger for local (native) platform"
     echo "  $0 --copy-sshkey               # Copy SSH key to BBB for password-less login"
     echo
+}
+
+gui_viewer() {
+    python3 gui/cube_data_viewer.py
+}
+
+gui_control() {
+    python3 gui/cube_control.py
 }
 
 file2BBB() {
@@ -192,6 +202,12 @@ while [ $# -gt 0 ]; do
             ;;
         -rrbbb|--run-release-bbb)
             run_release_bbb
+            ;;
+        -gv|--gui-viewer)
+            gui_viewer
+            ;;
+        -gc|--gui-control)
+            gui_control
             ;;
         -c|--clean)
             clean
