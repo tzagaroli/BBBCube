@@ -27,10 +27,14 @@ You **must follow this structure** for the build system and tasks to work proper
 ## Getting Started
 
 If your machine comes with any of these pre-installed skip the installation (the emsys VM can skip 2.)
+Get this repo by downloading the zip or cloning it:
+```bash
+git clone git@github.com:ruben01egle/BBBCube.git
+```
 
 ### 1. Install VS Code
 
-- Download from: https://code.visualstudio.com/ or through packet manager
+- Set up apt-repository following: https://code.visualstudio.com/docs/setup/linux or download from: https://code.visualstudio.com/download (do not use snap)
 
 ### 2. Install Required Tools
 
@@ -73,11 +77,11 @@ Search and install the following extensions in VS Code:
 
 - `C/C++` (by Microsoft) – for IntelliSense and debugging  
 - `Makefile Tools` – for make-based builds  
-- `Task Explorer` by `Scott Meesseman` – to execute tasks from the left sidebar with one click
+- `Task Explorer` by `Scott Meesseman` – to execute tasks from the primary sidebar with one click
 
 ### 4. Open the Project Folder
 
-Just open the root of the repository with VS Code.
+Open the repository with VS Code.
 
 ### 5. Connect to the cube from remote network
 
@@ -105,7 +109,7 @@ To see the live camera feed and change the position of the cube run the python g
 
 ### 5. Use Predefined Tasks
 
-- Open the **Task Runner** sidebar (usually a new icon appears on the left)
+- Open the **Task Explorer** in the VSCode Explorer sidebar and open the vscode tasks.
 - Click to run:
     - `build native`
     - `run native`

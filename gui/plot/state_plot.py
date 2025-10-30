@@ -69,8 +69,8 @@ class StatePlot(BasePlot):
         self.phi_c.append(math.degrees(state.mPhi_C))
         self.phi_a.append(math.degrees(state.mPhi_A))
         self.phi_d.append(math.degrees(state.mPhi_d))
-        self.psi_d.append(state.mPsi_d)
-        self.motor_torque.append(math.degrees(scontent.mMotorTorque))
+        self.psi_d.append(math.degrees(state.mPsi_d))
+        self.motor_torque.append(scontent.mMotorTorque)
 
         t = list(self.timestamps)
         self.curves['phi_c'].setData(t, list(self.phi_c))
