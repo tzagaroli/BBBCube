@@ -1,3 +1,4 @@
+.local/
 /build_BBB
 /build_native
 __pycache__/
